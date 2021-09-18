@@ -671,7 +671,7 @@ class AudioService {
         };
         if (_testMode) {
           MethodChannel('ryanheise.com/audioServiceInverse')
-              .setMockMethodCallHandler(handler);
+              .setMethodCallHandler(handler);
         } else {
           _channel.setMethodCallHandler(handler);
         }
@@ -1263,7 +1263,7 @@ class AudioServiceBackground {
     // a separate channel for each direction when testing.
     if (_testMode) {
       MethodChannel('ryanheise.com/audioServiceBackgroundInverse')
-          .setMockMethodCallHandler(handler);
+          .setMethodCallHandler(handler);
     } else {
       _backgroundChannel.setMethodCallHandler(handler);
     }
